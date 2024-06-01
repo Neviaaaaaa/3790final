@@ -92,22 +92,22 @@ import os
 def compute_similarity(img1_path, img2_path):
     if not os.path.exists(img1_path):
         print(f"文件不存在: {img1_path}")
-        return float('inf')  # 返回一个很大的值
+        return float('inf')  
 
     if not os.path.exists(img2_path):
         print(f"文件不存在: {img2_path}")
-        return float('inf')  # 返回一个很大的值
+        return float('inf')  
 
     img1 = cv2.imread(img1_path, cv2.IMREAD_GRAYSCALE)
     img2 = cv2.imread(img2_path, cv2.IMREAD_GRAYSCALE)
 
     if img1 is None:
         print(f"无法读取图像: {img1_path}")
-        return float('inf')  # 返回一个很大的值
+        return float('inf') 
 
     if img2 is None:
         print(f"无法读取图像: {img2_path}")
-        return float('inf')  # 返回一个很大的值
+        return float('inf')  
 
     img1 = cv2.resize(img1, (224, 224))
     img2 = cv2.resize(img2, (224, 224))
